@@ -10,6 +10,7 @@
   --color-light: #fafafa;
   --size-controls: 180px;
   --transition-time: .3s;
+  --border: 1px solid var(--color-dark);
 }
 
 @media screen and (min-width: 768px) {
@@ -86,7 +87,7 @@ main > * {
   position: relative;
   max-height: 66vh;
   overflow: hidden;
-  border: 3px solid black;
+  border: 3px solid var(--color-dark);
 }
 
 .color {
@@ -109,6 +110,7 @@ main > * {
 
 .control--text input {
   padding: var(--spacing-small);
+  border: var(--border);
 }
 
 .control--color-range {
@@ -125,7 +127,7 @@ main > * {
 
 .control--button input {
   padding: var(--spacing-small);
-  border: 1px solid var(--color-dark);
+  border: var(--border);
   background-color: var(--color-dark);
   color: var(--color-light);
   cursor: pointer;
