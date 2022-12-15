@@ -1,0 +1,46 @@
+
+:root {
+  --color-h: 180;
+  --color-s: 100;
+  --color-l: 50;
+  --color-a: 100;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.ga {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.canvas {
+  position: relative;
+  max-height: 66vh;
+  overflow: hidden;
+  border: 3px solid black;
+}
+
+.canvas__item {
+  --width: 100%;
+  --height: 100%;
+  /* fill: hsla(var(--color-h), var(--color-s), var(--color-l), var(--color-a)); */
+}
+
+.color {
+  width: 360px;
+  height: 360px;
+  background-color: hsla(var(--color-h), calc(var(--color-s) * 1%), calc(var(--color-l) * 1%), calc(var(--color-a) * 1%));
+}
+
+.control--color-range {
+  width: 360px;
+}
+#color-picker-range {
+  width: 360px;
+}

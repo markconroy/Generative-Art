@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Generative Art by Mark Conroy</title>
+</head>
+
+<body>
+  <header>
+    Generative Art Canvas
+  </header>
+  
+  <main>
+    <div class="controls">
+      <div class="control control--amount">
+        <label for="color-amount">Choose maximum amount of blocks</label>
+        <input type="number" name="color-amount" id="color-amount" value="15">
+      </div>
+      <div class="control control--custom">
+        <label for="color-custom">Choose base colour</label>
+        <input type="checkbox" name="color-custom" id="color-custom">
+      </div>
+      <div class="control control--color-range" hidden>
+        <div class="color"></div>
+        <label for="color-picker-range">Choose colour</label>
+        <input type="range" name="color-picker-range" id="color-picker-range" min="1" max="360" value="180">
+      </div>
+      <div class="control control--create">
+        <input type="button" value="Create Art" id="create-art">
+      </div>
+      <div class="control control--save">
+        <input type="button" value="Save Art" id="save-art">
+      </div>
+    </div>
+    <div class="ga">
+      <svg xmlns="http://www.w3.org/2000/svg" class="canvas"></svg>
+    </div>
+  </main>
+
+  <footer>
+    Generative Art Canvas
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
