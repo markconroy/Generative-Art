@@ -88,6 +88,7 @@ main > * {
   max-height: 66vh;
   overflow: hidden;
   border: 3px solid var(--color-dark);
+  width: 100%;
 }
 
 .color {
