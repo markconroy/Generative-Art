@@ -4,6 +4,18 @@
   --color-s: 50;
   --color-l: 50;
   --color-a: 100;
+  --spacing: 1rem;
+  --spacing-small: calc(var(--spacing) / 2);
+  --color-dark: #333333;
+  --color-light: #fafafa;
+  --size-controls: 180px;
+  --transition-time: .3s;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --spacing: 2rem;
+  }
 }
 
 *,
@@ -12,11 +24,62 @@
   box-sizing: border-box;
 }
 
+/* Utilities */
+.layout-contained {
+  max-width: 1140px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.padding-horizontal {
+  padding-right: var(--spacing);
+  padding-left: var(--spacing);
+}
+
+/* Custom Styles */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: var(--spacing);
+  line-height: 1.3;
+  font-family: sans-serif;
+}
+
+a,
+input {
+  transition: var(--transition-time);
+}
+
+.landmark {
+  padding: var(--spacing);
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+.landmark a {
+  color: var(--color-light)
+}
+
+.landmark--header {
+  margin-bottom: var(--spacing);
+}
+
+.landmark--footer {
+  margin-top: auto;
+}
+
+main > * {
+  margin-bottom: var(--spacing);
+}
+
 .ga {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .canvas {
@@ -27,14 +90,48 @@
 }
 
 .color {
-  width: 360px;
-  height: 360px;
+  width: var(--size-controls);
+  height: var(--size-controls);
   background-color: hsla(var(--color-h), calc(var(--color-s) * 1%), calc(var(--color-l) * 1%), calc(var(--color-a) * 1%));
 }
 
-.control--color-range {
-  width: 360px;
+.control + .control {
+  margin-top: var(--spacing);
 }
-#color-picker-range {
-  width: 360px;
+
+.control input {
+  font-size: 1rem;
+}
+
+.control--text label {
+  display: block;
+}
+
+.control--text input {
+  padding: var(--spacing-small);
+}
+
+.control--color-range {
+  width: var(--size-controls);
+}
+
+.control--color-range input {
+  width: var(--size-controls);
+}
+
+.control--button {
+  display: inline-block;
+}
+
+.control--button input {
+  padding: var(--spacing-small);
+  border: 1px solid var(--color-dark);
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  cursor: pointer;
+}
+.control--button input:focus,
+.control--button input:hover {
+  background-color: var(--color-light);
+  color: var(--color-dark);
 }

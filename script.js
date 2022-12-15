@@ -2,7 +2,9 @@ const canvas = document.querySelector('.canvas');
 const amount = document.querySelector('#color-amount');
 const colorChooser = document.querySelector('.control--color-range');
 const colorPickerRange = document.querySelector('#color-picker-range');
-const chooseBaseColor = document.querySelector('#color-custom');
+const chooseBaseColor = document.querySelector('.control--base-color');
+const chooseBaseColorCheckbox = chooseBaseColor.querySelector('input');
+const chooseBaseColorLabel = chooseBaseColor.querySelector('label');
 const createArt = document.querySelector('#create-art');
 const saveArt = document.querySelector('#save-art');
 const svgns = "http://www.w3.org/2000/svg";
@@ -54,7 +56,7 @@ function handleCreateItems() {
     createItem();
   }
 
-  if (chooseBaseColor.checked) {
+  if (chooseBaseColorCheckbox.checked) {
     const items = document.querySelectorAll('.canvas__item');
     items.forEach(item => {
       item.style.setProperty('--color-h', colorPickerRange.value);
@@ -65,7 +67,8 @@ function handleCreateItems() {
 }
 
 function handleChooseBaseColor() {
-  chooseBaseColor.checked ? colorChooser.style.display = 'block' : colorChooser.style.display = 'none';
+  chooseBaseColorCheckbox.checked ? colorChooser.style.display = 'block' : colorChooser.style.display = 'none';
+  chooseBaseColorCheckbox.checked ? chooseBaseColorLabel.innerText = 'Reset to random colors' : chooseBaseColorLabel.innerText = 'Choose base color';
 }
 
 function saveSvg() {
@@ -84,7 +87,7 @@ function saveSvg() {
 
 handleCreateItems();
 
-chooseBaseColor.addEventListener('click', handleChooseBaseColor);
+chooseBaseColorCheckbox.addEventListener('click', handleChooseBaseColor);
 colorPickerRange.addEventListener('input', handleColorPickerRange);
 createArt.addEventListener('click', handleCreateItems);
 saveArt.addEventListener('click', saveSvg);

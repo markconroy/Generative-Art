@@ -10,29 +10,29 @@
 </head>
 
 <body>
-  <header>
-    Generative Art Canvas
+  <header class="landmark landmark--header">
+    <h1>Generative Art Canvas</h1>
   </header>
-  
+
   <main>
     <div class="controls">
-      <div class="control control--amount">
+      <div class="control control--amount control--text">
         <label for="color-amount">Choose maximum amount of blocks</label>
         <input type="number" name="color-amount" id="color-amount" value="15">
       </div>
-      <div class="control control--custom">
+      <div class="control control--base-color control--checkbox">
         <label for="color-custom">Choose base colour</label>
         <input type="checkbox" name="color-custom" id="color-custom">
       </div>
-      <div class="control control--color-range" hidden>
+      <div class="control control--color-range control--range" hidden>
         <div class="color"></div>
         <label for="color-picker-range">Choose colour</label>
         <input type="range" name="color-picker-range" id="color-picker-range" min="1" max="360" value="180">
       </div>
-      <div class="control control--create">
+      <div class="control control--create control--button">
         <input type="button" value="Create Art" id="create-art">
       </div>
-      <div class="control control--save">
+      <div class="control control--save control--button">
         <input type="button" value="Save Art" id="save-art">
       </div>
     </div>
@@ -41,10 +41,18 @@
     </div>
   </main>
 
-  <footer>
-    Generative Art Canvas
+  <footer class="landmark landmark--footer">
+    <div class="layout-contained padding-horizontal">
+      <ul>
+        <li>Created by <a href="https://mark.ie">Mark Conroy</a>.</li>
+        <li>Follow me on <a href="https://twitter.com/markconroy">Twitter</a></li>
+        <li>View the source code on <a href="https://github.com/markconroy/generative-art">GitHub</a>.
+        </li>
+      </ul>
+    </div>
   </footer>
-  
+
   <script src="script.js"></script>
 </body>
+
 </html>
