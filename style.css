@@ -79,17 +79,16 @@ main > * {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 960px;
+  max-width: 66vh;
   margin-right: auto;
   margin-left: auto;
 }
 
 .canvas {
   position: relative;
-  max-height: 66vh;
+  width: 100%;
   overflow: hidden;
   border: 3px solid var(--color-dark);
-  width: 100%; 
 }
 
 .color {
