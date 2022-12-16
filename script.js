@@ -29,15 +29,30 @@ function createItem() {
   const item = document.createElementNS(svgns, "rect"); 
   const width = `${randomNumber(viewBoxWidth)}`;
   const height = `${randomNumber(viewBoxHeight)}`;
-  
+  const xNumber = `${randomNumber(101)}`;
+  const yNumber = `${randomNumber(101)}`;
+  let x;
+  let y;
+
+  if (xNumber % 2) {
+    x = `${xNumber * -1}%`;
+  } else {
+    x = `${xNumber * 1}%`
+  }
+  if (yNumber % 2) {
+    y = `${yNumber * -1}%`;
+  } else {
+    y = `${yNumber * 1}%`
+  }
+
   item.style.setProperty('--color-h', `${randomNumber(361)}`);
   item.style.setProperty('--color-s', `${randomNumber(101)}%`);
   item.style.setProperty('--color-l', `${randomNumber(101)}%`);
   item.style.setProperty('--color-a', `${randomNumber(101)}%`);
   item.setAttribute('width', width);
   item.setAttribute('height', height);
-  item.setAttribute('x', width);
-  item.setAttribute('y', height);
+  item.setAttribute('x', x);
+  item.setAttribute('y', y);
   item.style.fill = `hsla(var(--color-h), var(--color-s), var(--color-l), var(--color-a))`;
   item.classList.add('canvas__item');
   
