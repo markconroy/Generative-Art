@@ -10,9 +10,8 @@ const saveArt = document.querySelector('#save-art');
 const svgns = "http://www.w3.org/2000/svg";
 let iterations = randomNumber(amount.value);
 let color = randomNumber(361);
-// The SVG viwBox is the same dimensions as an A2/3/4/etc sheet of paper.
-const viewBoxWidth = 298;
-const viewBoxHeight = 211;
+const viewBoxWidth = 1000;
+const viewBoxHeight = 1000;
 
 canvas.setAttribute('viewBox', `0 0 ${viewBoxWidth} ${viewBoxHeight}`);
 
